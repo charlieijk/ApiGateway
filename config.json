@@ -1,0 +1,26 @@
+{
+  "server": {
+    "address": ":8080",
+    "read_timeout": 15000000000,
+    "write_timeout": 15000000000,
+    "idle_timeout": 60000000000
+  },
+  "services": [
+    {
+      "name": "user-service",
+      "path": "/api/users/*",
+      "target": "http://localhost:9001"
+    },
+    {
+      "name": "product-service",
+      "path": "/api/products/*",
+      "target": "http://localhost:9002"
+    },
+    {
+      "name": "order-service",
+      "path": "/api/orders/*",
+      "target": "http://localhost:9003"
+    }
+  ],
+  "rate_limit": 100
+}
